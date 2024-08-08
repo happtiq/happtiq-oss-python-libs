@@ -23,4 +23,3 @@ class PubsubApiService:
 
     def build_topic_path(self, project_id: str, topic_id: str):
         return self.publisher.topic_path(project_id, topic_id)
-    

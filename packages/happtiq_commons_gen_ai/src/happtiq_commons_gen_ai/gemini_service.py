@@ -32,4 +32,3 @@ class VertexAiService:
         except Exception as e:
             self.logger.error(f"Error occurred while generating from gemini: {e}")
             raise
-    

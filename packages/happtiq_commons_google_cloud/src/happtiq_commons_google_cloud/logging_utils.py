@@ -14,4 +14,3 @@ def is_cloud_function():
 
 def setup_cloud_function_logger():
     google.cloud.logging.Client().setup_logging()
-    
