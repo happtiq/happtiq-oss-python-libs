@@ -1,0 +1,19 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "happtiq_commons_google_cloud"
+version = "0.0.1"
+requires-python = ">=3.9"
+
+dependencies = [
+    'google-cloud-storage',
+    'cloudevents',
+    'google-cloud-logging',
+    'google-auth',
+    'google-auth-oauthlib',
+    'google-cloud-pubsub',
+    'google-cloud-secret-manager'
+]
+
