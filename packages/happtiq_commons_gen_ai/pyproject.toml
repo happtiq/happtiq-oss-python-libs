@@ -4,14 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "happtiq_commons_gen_ai"
-version = "0.0.8"
+version = "0.0.1"
 requires-python = ">=3.9"
 
 dependencies = [
-    'google-cloud-logging',
-    'google-auth',
-    'google-auth-oauthlib',
-    'google-cloud-secret-manager',
     'google-cloud-aiplatform',
     'openai'
 ]

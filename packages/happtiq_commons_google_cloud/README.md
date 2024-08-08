@@ -1,1 +1,0 @@
-# happtiq-oss-python-libs

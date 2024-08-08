@@ -1,5 +1,4 @@
 import logging
-import time
 import vertexai
 from vertexai.generative_models import GenerativeModel, Part
 
@@ -22,24 +21,17 @@ class VertexAiService:
         response = self.model.generate_content(contents)
         return response.text
     
-    def send_prompt_to_api(self, prompt: str, retry: int = 3) -> str:
+    def send_prompt_to_api(self, prompt: str) -> str:
         self.logger.info(f"Sending prompt to vertex ai:\n {prompt}")
-        
-        for attempt in range(retry):
-            try:
-                self.logger.debug(f"Will start attempt {attempt + 1}")
-                response = self.model.generate_content(prompt)
-
-                reply_text = response.text
-                self.logger.info(f"Attempt {attempt + 1} succeded with response {reply_text}")
-                
-                return reply_text
-            except Exception as e:
-                self.logger.error(f"Attempt {attempt + 1} failed: {e}")
-                time.sleep(2 ** attempt)  # Exponential back-off
-
-        self.logger.error(f"Failed to get a response after {retry} attempts.")
-        return None
+    
+        try:
+            response = self.model.generate_content(prompt)
+            reply_text = response.text
+            
+            return reply_text
+        except Exception as e:
+            self.logger.error(f"Error occurred while generating from gemini: {e}")
+            raise
     
 
 
