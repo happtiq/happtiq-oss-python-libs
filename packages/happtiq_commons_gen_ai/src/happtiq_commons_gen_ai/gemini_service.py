@@ -33,6 +33,3 @@ class VertexAiService:
             self.logger.error(f"Error occurred while generating from gemini: {e}")
             raise
     
-
-
-

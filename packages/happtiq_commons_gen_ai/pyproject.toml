@@ -11,4 +11,3 @@ dependencies = [
     'google-cloud-aiplatform',
     'openai'
 ]
-
