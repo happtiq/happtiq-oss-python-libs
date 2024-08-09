@@ -6,6 +6,11 @@ jobs:
   build:
     name: Build distribution 📦
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package-path:
+          - packages/happtiq_commons_gen_ai
+          - packages/happtiq_commons_google_cloud
 
     steps:
     - uses: actions/checkout@v4
