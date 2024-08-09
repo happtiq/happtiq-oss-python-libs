@@ -2,7 +2,7 @@ import logging
 import vertexai
 from vertexai.generative_models import GenerativeModel, Part
 
-class VertexAiService:
+class GeminiService:
     def __init__(self, project_id: str, location: str, model_id: str):
         vertexai.init(project=project_id, location=location)
         self.model = GenerativeModel(model_name=model_id)

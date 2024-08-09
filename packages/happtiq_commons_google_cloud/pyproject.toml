@@ -17,3 +17,8 @@ dependencies = [
     'google-cloud-secret-manager'
 ]
 
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-mock"
+]
