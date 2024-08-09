@@ -11,5 +11,5 @@ class GoogleOAuth2Service:
         credentials = Credentials.from_authorized_user_file(file)
         request = google.auth.transport.requests.Request()
         credentials.refresh(request)
-        self.logger.info(f"got scopes {credentials.scopes}")
+        self.logger.info("Logged in")
         return credentials
