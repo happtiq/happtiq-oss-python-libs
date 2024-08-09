@@ -11,3 +11,9 @@ dependencies = [
     'google-cloud-aiplatform',
     'openai'
 ]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-mock"
+]
