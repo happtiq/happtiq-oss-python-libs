@@ -1,6 +1,13 @@
 name: Publish Python 🐍 distribution 📦 to PyPI
 
-on: push
+on:
+  push:
+    branches:
+      - main                              # Trigger on push to main
+      - pypi-instructions-for-publishing  # Add other branch names if needed
+  pull_request:
+    branches:
+      - main 
 
 jobs:
   build:
