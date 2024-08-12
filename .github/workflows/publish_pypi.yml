@@ -27,7 +27,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: python-package-distributions
-        path: packages/${{ matrix.package-path }}/dist/
+        path: packages/${{ matrix.package }}/dist/
 
   publish-to-pypi:
     name: Publish Python 🐍 distribution 📦 to PyPI
