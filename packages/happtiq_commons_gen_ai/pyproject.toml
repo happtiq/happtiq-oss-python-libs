@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "kaan_trail1"
 version = "0.0.1"
 requires-python = ">=3.9"
+readme = "README.md"
 
 dependencies = [
     'google-cloud-aiplatform',
