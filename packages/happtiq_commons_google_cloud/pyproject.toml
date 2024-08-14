@@ -1,12 +1,12 @@
 [build-system]
-requires      = ["setuptools>=61.0.0", "wheel"]
+requires      = ["setuptools>=64", "setuptools_scm>=8", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "kaan_trial2"
-version = "0.0.1"
 requires-python = ">=3.9"
 readme = "README.md"
+dynamic = ["version"]
 
 dependencies = [
     'google-cloud-storage',
