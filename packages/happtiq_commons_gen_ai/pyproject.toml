@@ -7,9 +7,6 @@ name = "happtiq_commons_gen_ai"
 requires-python = ">=3.9"
 readme = "README.md"
 dynamic = ["version"]
-
-[tool.setuptools_scm]
-
 dependencies = [
     'google-cloud-aiplatform',
     'openai'
@@ -20,3 +17,6 @@ dev = [
     "pytest",
     "pytest-mock"
 ]
+
+[tool.setuptools_scm]
+root = "../.."
