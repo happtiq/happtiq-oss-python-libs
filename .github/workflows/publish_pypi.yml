@@ -11,10 +11,7 @@ jobs:
         package: ["happtiq_commons_gen_ai", "happtiq_commons_google_cloud"]
 
     steps:
-    - if: github.event.ref_type == 'tag'
-      uses: actions/checkout@v3
-    - if: github.event_name == 'workflow_dispatch'
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
     - name: Set up Python
