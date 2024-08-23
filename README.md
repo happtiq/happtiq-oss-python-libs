@@ -2,7 +2,7 @@
 
 ## Sub-Packages
 
-This project is composed of two sub-packages, each providing specific functionalities to enhance your applications. Below are links to the respective sub-packages:
+Below are links to the different packages:
 
 ### 1. [happtiq_commons_gen_ai](https://pypi.org/project/happtiq_commons_gen_ai/)
 `happtiq_commons_gen_ai` provides an interface to interact with different AI models like ChatGPT and Gemini. It includes methods to send prompts and manage responses.
