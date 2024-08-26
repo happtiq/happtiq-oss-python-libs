@@ -74,3 +74,21 @@ def test_upload_file_gzipped(gcs_api_service, monkeypatch):
     gcs_api_service.client.bucket().blob.assert_called_once_with(destination)
     gcs_api_service.client.bucket().blob(destination).upload_from_filename.assert_called_once_with(file_path, content_type=content_type, timeout=30)
     gcs_api_service.client.bucket().blob(destination).content_encoding = "gzip"
+
+def test_list_files_with_prefix(gcs_api_service, monkeypatch):
+    mock_client = MagicMock()
+    mock_bucket = MagicMock()
+    mock_blobs = [MagicMock(name="file1.txt"), MagicMock(name="file2.txt")]
+
+    mock_client.bucket.return_value = mock_bucket
+    mock_bucket.list_blobs.return_value = mock_blobs
+    monkeypatch.setattr(gcs_api_service, "client", mock_client)
+
+    bucket_name = "test-bucket"
+    prefix = "test-prefix/"
+
+    result = gcs_api_service.list_files_with_prefix(bucket_name, prefix)
+
+    assert result == ["file1.txt", "file2.txt"]
+    mock_client.bucket.assert_called_once_with(bucket_name)
+    mock_bucket.list_blobs.assert_called_once_with(prefix=prefix)
