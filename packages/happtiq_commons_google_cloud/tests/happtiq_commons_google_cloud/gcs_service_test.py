@@ -78,7 +78,11 @@ def test_upload_file_gzipped(gcs_api_service, monkeypatch):
 def test_list_files_with_prefix(gcs_api_service, monkeypatch):
     mock_client = MagicMock()
     mock_bucket = MagicMock()
-    mock_blobs = [MagicMock(name="file1.txt"), MagicMock(name="file2.txt")]
+    mock_blob1 = MagicMock()
+    mock_blob1.name = "file1.txt"
+    mock_blob2 = MagicMock()
+    mock_blob2.name = "file2.txt"
+    mock_blobs = [mock_blob1,mock_blob2]
 
     mock_client.bucket.return_value = mock_bucket
     mock_bucket.list_blobs.return_value = mock_blobs
