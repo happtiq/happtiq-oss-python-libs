@@ -3,7 +3,8 @@ from happtiq_commons_google_cloud.secret_manager_api_service import SecretManage
 from unittest.mock import MagicMock, patch
 
 @pytest.fixture
-def secret_manager_api_service():
+def secret_manager_api_service(monkeypatch):
+    monkeypatch.setattr("google.auth.default", MagicMock(return_value=(MagicMock(),"some-proje")))
     return SecretManagerApiService()
 
 def test_read_secret(secret_manager_api_service, monkeypatch):
