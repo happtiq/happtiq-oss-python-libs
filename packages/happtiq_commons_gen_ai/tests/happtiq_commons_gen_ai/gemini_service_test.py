@@ -3,8 +3,11 @@ from unittest.mock import MagicMock, patch
 from happtiq_commons_gen_ai.gemini_service import GeminiService
 
 @pytest.fixture
+def google_auth(monkeypatch):
+    monkeypatch.setattr("google.auth.default", MagicMock(return_value=(MagicMock(),MagicMock())))
+
+@pytest.fixture
 def vertex_ai_service(monkeypatch):
-    monkeypatch.setattr("google.auth.default", (MagicMock(), MagicMock()))
     monkeypatch.setattr("vertexai.init", MagicMock())
     return GeminiService(project_id="some-project", location="some-location", model_id="some-model")
 
