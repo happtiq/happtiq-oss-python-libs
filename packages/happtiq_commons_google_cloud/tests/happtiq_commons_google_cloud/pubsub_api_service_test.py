@@ -5,7 +5,8 @@ import json
 
 
 @pytest.fixture
-def pubsub_api_service():
+def pubsub_api_service(monkeypatch):
+    monkeypatch.setattr("google.auth.default", MagicMock(return_value=(MagicMock(),"some-proje")))
     return PubsubApiService()
 
 def test_publish_message(pubsub_api_service, monkeypatch):
