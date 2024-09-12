@@ -3,7 +3,8 @@ from unittest.mock import MagicMock, patch
 from happtiq_commons_google_cloud.gcs_api_service import GcsApiService
 
 @pytest.fixture
-def gcs_api_service():
+def gcs_api_service(monkeypatch):
+    monkeypatch.setattr("google.auth.default", MagicMock(return_value=(MagicMock(universe_domain="googleapis.com"),"some-proje")))
     return GcsApiService(timeout=30)
 
 def mock_storage_client():
