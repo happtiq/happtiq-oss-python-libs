@@ -37,3 +37,14 @@ class GcsApiService:
         blob.upload_from_filename(file_path, content_type=content_type, timeout=self.timeout)
         self.logger.info(f"File uploaded to {destination}.")
         return f"gs://{bucket_name}/{destination}"
+    
+    def list_files_with_prefix(self, bucket_name: str, prefix: str):
+        self.logger.info(f"Listing files in bucket {bucket_name} with prefix {prefix}")
+        bucket = self.client.bucket(bucket_name)
+        blobs = bucket.list_blobs(prefix=prefix)
+
+        file_list = [blob.name for blob in blobs]
+        self.logger.debug(f"Files in bucket {bucket_name} with prefix {prefix}: {file_list}")
+        self.logger.info(f"found {len(file_list)} files in bucket {bucket_name} with prefix {prefix}")
+    
+        return file_list
