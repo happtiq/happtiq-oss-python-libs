@@ -6,7 +6,7 @@ LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
 
 def setup_logging(log_level=LOG_LEVEL):
     if is_cloud_function():
-        setup_cloud_function_logger()
+        setup_cloud_function_logger(log_level=log_level)
     else:
         logging.basicConfig(level=log_level)
 
