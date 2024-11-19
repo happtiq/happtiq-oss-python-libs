@@ -48,3 +48,4 @@ class GcsApiService:
         self.logger.info(f"found {len(file_list)} files in bucket {bucket_name} with prefix {prefix}")
     
         return file_list
+
