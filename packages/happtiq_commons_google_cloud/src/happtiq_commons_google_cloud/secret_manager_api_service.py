@@ -27,6 +27,7 @@ class SecretManagerApiService:
             raise
 
         return secret_key
-    
+
+    @staticmethod
     def build_secret_name(project_id: str, secret_id: str, version_id: str = "latest"):
         return f"projects/{project_id}/secrets/{secret_id}/versions/{version_id}"
