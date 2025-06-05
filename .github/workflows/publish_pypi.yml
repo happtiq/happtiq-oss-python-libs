@@ -117,7 +117,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ github.token }}
       run: |
-        gh release upload '${{ github.ref_name }}' dist/** --repo '${{ github.repository }}' --draft
+        gh release upload '${{ github.ref_name }}' dist/** --repo '${{ github.repository }}'
 
   publish-to-testpypi:
       name: Publish Python 🐍 distribution 📦 to TestPyPI
