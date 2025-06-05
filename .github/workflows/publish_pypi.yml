@@ -160,4 +160,4 @@ jobs:
         with:
           repository-url: https://test.pypi.org/legacy/
           password: ${{ secrets.TEST_PYPI_API_TOKEN }}
-          packages-dir: dist/python-package-distributions-${{ matrix.package }}/
+          packages-dir: dist
