@@ -98,7 +98,7 @@ jobs:
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
         password: ${{ secrets.PYPI_API_TOKEN }}
-        packages-dir: dist/packages/${{ matrix.package }}/dist/
+        packages-dir: dist/python-package-distributions-${{ matrix.package }}/
 
   github-release:
     name: Sign the Python 🐍 distribution 📦 with Sigstore and upload them to GitHub Release
@@ -160,4 +160,4 @@ jobs:
         with:
           repository-url: https://test.pypi.org/legacy/
           password: ${{ secrets.TEST_PYPI_API_TOKEN }}
-          packages-dir: dist/packages/${{ matrix.package }}/dist/
+          packages-dir: dist/python-package-distributions-${{ matrix.package }}/
