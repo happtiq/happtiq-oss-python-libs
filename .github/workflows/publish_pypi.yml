@@ -27,6 +27,7 @@ jobs:
       run: |
         cd packages/${{ matrix.package }}
         pytest
+
   build:
     name: Build distribution 📦
     runs-on: ubuntu-latest
@@ -63,6 +64,11 @@ jobs:
     needs:
       - build
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        package: ["happtiq_commons_gen_ai", "happtiq_commons_google_cloud"]
+
     environment:
       name: pypi
       url: https://pypi.org/p/${{ matrix.package }}
@@ -88,6 +94,10 @@ jobs:
     permissions:
       contents: write  # IMPORTANT: mandatory for making GitHub Releases
       id-token: write  # IMPORTANT: mandatory for sigstore
+
+    strategy:
+      matrix:
+        package: ["happtiq_commons_gen_ai", "happtiq_commons_google_cloud"]
 
     steps:
     - name: Download all the dists
@@ -117,6 +127,10 @@ jobs:
       needs:
       - build
       runs-on: ubuntu-latest
+
+      strategy:
+        matrix:
+          package: ["happtiq_commons_gen_ai", "happtiq_commons_google_cloud"]
 
       environment:
         name: testpypi
