@@ -6,7 +6,11 @@ build-backend = "setuptools.build_meta"
 name = "happtiq_commons_gen_ai"
 requires-python = ">=3.9"
 readme = "README.md"
+description = "[DEPRECATED] Abstractions for working with OpenAI and Google GenAI models."
 dynamic = ["version"]
+classifiers = [
+    "Development Status :: 7 - Inactive"
+]
 dependencies = [
     'google-cloud-aiplatform',
     'openai'
@@ -21,3 +25,8 @@ dev = [
 [tool.setuptools_scm]
 root = "../.."
 local_scheme = "no-local-version"
+
+[tool.happtiq]
+maintenance_status = "deprecated"
+deprecation_announced = "2026-04-16"
+eol = "2026-10-16"

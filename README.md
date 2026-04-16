@@ -1,3 +1,9 @@
+> 🚨 **DEPRECATION NOTICE**
+>
+> - **Deprecation announced:** 2026-04-16
+> - **End-of-Life (EOL):** 2026-10-16
+> - Both published packages in this repository are deprecated and will no longer receive bug fixes or security updates after EOL.
+
 # happtiq-oss-python-libs
 
 ## Packages

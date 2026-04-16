@@ -1,3 +1,11 @@
+> 🚨 **DEPRECATION NOTICE**
+>
+> - **Deprecation announced:** 2026-04-16
+> - **End-of-Life (EOL):** 2026-10-16
+> - **Status:** This library is deprecated and will not receive updates after the EOL date, including security and bug-fix releases.
+> - **Why:** We are reducing maintenance overhead for wrapper libraries and encouraging direct SDK usage to improve long-term compatibility.
+> - **Migration path:** Migrate to the official SDKs directly: `openai` for OpenAI models and `google-genai` or Vertex AI SDK integrations for Gemini use cases.
+
 # happtiq_commons_gen_ai
 
 [![PyPI version](https://badge.fury.io/py/happtiq_commons_gen_ai.svg)](https://badge.fury.io/py/happtiq_commons_gen_ai)
