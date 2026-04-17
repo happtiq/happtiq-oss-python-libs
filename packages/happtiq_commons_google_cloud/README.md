@@ -1,3 +1,11 @@
+> 🚨 **DEPRECATION NOTICE**
+>
+> - **Deprecation announced:** 2026-04-16
+> - **End-of-Life (EOL):** 2026-10-16
+> - **Status:** This library is deprecated and will not receive updates after the EOL date, including security and bug-fix releases.
+> - **Why:** We are reducing maintenance overhead for wrapper libraries and standardizing integrations on official cloud SDKs.
+> - **Migration path:** Migrate to direct usage of official Google Cloud client libraries (`google-cloud-storage`, `google-cloud-pubsub`, `google-cloud-secret-manager`, `google-cloud-logging`) and `google-auth`.
+
 # happtiq_commons_google_cloud
 
 [![PyPI version](https://badge.fury.io/py/happtiq_commons_google_cloud.svg)](https://badge.fury.io/py/happtiq_commons_google_cloud)
